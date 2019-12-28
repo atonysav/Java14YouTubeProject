@@ -11,11 +11,18 @@ import java.io.IOException;
 public class Main {
 
     private static final IProjectConfig config = ConfigFactory.create(IProjectConfig.class, System.getProperties());
-    private static final String url = config.baseURL();
 
     public static void main(String[] args) throws IOException {
 
         ApiService apiService = new ApiService();
-        System.out.println(apiService.sendGetRequest(config.baseURL()));
+        System.out.println(apiService.sendGetRequest(config.baseURL())
+                .getYouTubeBody()
+                .getItems()
+                .get(0)
+                .getSnippet()
+                .getThumbnails()
+                .getHigh()
+                .getUrl()
+                );
     }
 }

@@ -1,17 +1,20 @@
 
 package responses;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class YouTubeBody {
 
     @JsonProperty("etag")
     private String etag;
 
     @JsonProperty("items")
-    private List<Item> items;
+    private ArrayList<Item> items;
 
     @JsonProperty("kind")
     private String kind;
@@ -28,7 +31,7 @@ public class YouTubeBody {
     @JsonProperty("regionCode")
     private String regionCode;
 
-    public YouTubeBody(String etag, List<Item> items, String kind, String nextPageToken, PageInfo pageInfo, String prevPageToken, String regionCode) {
+    public YouTubeBody(String etag, ArrayList<Item> items, String kind, String nextPageToken, PageInfo pageInfo, String prevPageToken, String regionCode) {
         this.etag = etag;
         this.items = items;
         this.kind = kind;
@@ -50,7 +53,7 @@ public class YouTubeBody {
         return items;
     }
 
-    public void setItems(List<Item> items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
 

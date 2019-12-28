@@ -2,9 +2,9 @@ package services;
 
 import okhttp3.Request;
 
-public class GetService {
+class GetService {
 
-    public Request createGetRequest(String url){
+    Request createGetRequest(String url){
         return new Request.Builder()
                 .url(url)
                 .get()

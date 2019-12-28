@@ -5,7 +5,7 @@ import okhttp3.RequestBody;
 
 class PostService {
 
-    Request createPostRequest(String url, RequestBody body){
+    Request sendPostRequest(String url, RequestBody body){
         return new Request.Builder()
                 .url(url)
                 .post(body)

@@ -18,9 +18,9 @@ public class ApiService {
     private Gson gson = new Gson();
     //ObjectMapper mapper = new ObjectMapper();
 
-    public ResponceReceiver sendGetRequest(String url) throws IOException {
+    public ResponceReceiver sendRequest(String url) throws IOException {
         String asQuery = "?part=snippet&maxResults=1&q=hello&key=AIzaSyCGb80YiFrBGofQ3eB_Q_CDoC6B0lnG1n8";
-        Request request = getService.createGetRequest(url+"search"+asQuery);
+        Request request = getService.sendGetRequest(url+"search"+asQuery);
 
         try(Response response = client.newCall(request).execute()){
             String responseBody = new String(Objects.requireNonNull(response.body()).bytes());

@@ -52,7 +52,7 @@ public class MainForm extends Application implements CreateSmtNew {
 
         stage.setScene(new Scene(webview));
         stage.show();
-        stage1.close();
+        mainStage.close();
     }
 
     public String getSearchRequest(){

@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         ApiService apiService = new ApiService();
-        System.out.println(apiService.sendRequest(config.baseURL())
+        System.out.println(apiService.sendGetRequest(config.baseURL(), "snippet", "2", "hello", config.apiKey() )
                 .getYouTubeBody()
                 .getItems()
                 .get(0)

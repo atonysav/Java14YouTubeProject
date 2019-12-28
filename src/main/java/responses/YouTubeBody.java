@@ -14,7 +14,7 @@ public class YouTubeBody {
     private String etag;
 
     @JsonProperty("items")
-    private ArrayList<Item> items;
+    private List<Item> items;
 
     @JsonProperty("kind")
     private String kind;
@@ -31,7 +31,7 @@ public class YouTubeBody {
     @JsonProperty("regionCode")
     private String regionCode;
 
-    public YouTubeBody(String etag, ArrayList<Item> items, String kind, String nextPageToken, PageInfo pageInfo, String prevPageToken, String regionCode) {
+    public YouTubeBody(String etag, List<Item> items, String kind, String nextPageToken, PageInfo pageInfo, String prevPageToken, String regionCode) {
         this.etag = etag;
         this.items = items;
         this.kind = kind;
@@ -53,7 +53,7 @@ public class YouTubeBody {
         return items;
     }
 
-    public void setItems(ArrayList<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 

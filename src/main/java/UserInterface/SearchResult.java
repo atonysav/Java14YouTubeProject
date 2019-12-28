@@ -34,8 +34,9 @@ public class SearchResult {
     public void setDataPublication(String dataPublication) {
         this.dataPublication = dataPublication;
     }
-    public String toString(){
-        return "Название видео "+ videoName +" Имя канала " + channelName + " Дата публикации " + dataPublication;
+
+    public String toString() {
+        return "Название видео " + videoName + " Имя канала " + channelName + " Дата публикации " + dataPublication;
     }
 
 }

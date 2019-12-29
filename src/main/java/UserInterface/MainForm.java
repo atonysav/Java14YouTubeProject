@@ -25,23 +25,23 @@ public class MainForm extends Application implements CreateSmtNew {
         buttonView.setOnAction(event -> {
             ObservableList searchResults1 = listView.getSelectionModel().getSelectedIndices();
             for(Object o : searchResults1){
-                textField.setText(listView.getItems().get((Integer) o).getChannelName());
-                watchVideo();    //Открытие сцены с видео из листа
+                textField.setText(listView.getItems().get((Integer) o).getChannelName()); // Просмотр информации из листа
+                watchVideo();
             }
         });
-       // Group group = new Group(button);                // вложенный узел Group
+       // Group group = new Group(button);
         buttonSearch.setOnAction(event -> {
             getSearchRequest();
         });
         saveVBox();
 
-        mainStage.setScene(scene);                          // установка Scene для Stage
+        mainStage.setScene(scene);
         mainStage.setTitle("Main Form");
         mainStage.sizeToScene();
         mainStage.show();
     }
 
-    void watchVideo(){
+    void watchVideo(){ // Создание формы для просмотра видео
         String url = "https://www.youtube.com/embed/i6xswALsyFI";
         Stage stage = new Stage();
         stage.setTitle("Watch Video Form");
@@ -55,13 +55,13 @@ public class MainForm extends Application implements CreateSmtNew {
         mainStage.close();
     }
 
-    public String getSearchRequest(){
+    public String getSearchRequest(){ // Получение стринги из поля поиска
         String searchRequest;
         searchRequest = textField.getText();
         return searchRequest;
     }
 
-    void saveVBox(){
+    void saveVBox(){ //сохранение в вертикальный контейнер
         vBox.setSpacing(20);
         vBox.setPadding(new Insets(15,20,10,10));
         vBox.getChildren().add(textField);

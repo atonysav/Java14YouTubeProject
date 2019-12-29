@@ -10,7 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public interface CreateSmtNew {
+public interface CreateSmtNew { //создание элементов 
     Button buttonSearch = new Button("Search");// кнопка
     Button buttonView = new Button("View");
     TextField textField = new TextField();
@@ -21,6 +21,6 @@ public interface CreateSmtNew {
     ObservableList<SearchResult> searchResults = FXCollections.observableArrayList(searchResult1,searchResult2);
     ListView<SearchResult> listView = new ListView<SearchResult>(searchResults);
     Stage mainStage = new Stage();
-    Scene scene = new Scene(vBox, 700, 350);        // создание Scene
+    Scene scene = new Scene(vBox, 700, 350);
 
 }

@@ -10,8 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public interface CreateSmtNew {
-    Button buttonSearch = new Button("Search");// кнопка
+public interface CreateSmtNew { //объявление всех констант и элементов
+    Button buttonSearch = new Button("Search");
     Button buttonView = new Button("View");
     TextField textField = new TextField();
     VBox vBox = new VBox();
@@ -22,6 +22,6 @@ public interface CreateSmtNew {
     ListView<SearchResult> listView = new ListView<SearchResult>(searchResults);
     Stage mainStage = new Stage();
 
-    Scene scene = new Scene(vBox, 700, 350);        // создание Scene
+    Scene scene = new Scene(vBox, 700, 350);        
 
 }

@@ -25,24 +25,24 @@ public class MainForm extends Application implements CreateSmtNew {
         buttonView.setOnAction(event -> {
             ObservableList searchResults1 = listView.getSelectionModel().getSelectedIndices();
             for(Object o : searchResults1){
-                textField.setText(listView.getItems().get((Integer) o).getChannelName());
+                textField.setText(listView.getItems().get((Integer) o).getChannelName());   // вывод в текстовое поле поиска название канала
+                                                                                             // сюда будет выводится видео
                 watchVideo();    //Открытие сцены с видео из листа
             }
         });
-       // Group group = new Group(button);                // вложенный узел Group
         buttonSearch.setOnAction(event -> {
             getSearchRequest();
         });
         saveVBox();
 
-        mainStage.setScene(scene);                          // установка Scene для Stage
+        mainStage.setScene(scene);
         mainStage.setTitle("Main Form");
         mainStage.sizeToScene();
         mainStage.show();
     }
 
-    void watchVideo(){
-        String url = "https://www.youtube.com/embed/i6xswALsyFI";
+    void watchVideo(){ // метод просмотра видео
+        String url = "https://www.youtube.com/embed/i6xswALsyFI"; // ссылка на видео
         Stage stage = new Stage();
         stage.setTitle("Watch Video Form");
         stage.initModality(Modality.WINDOW_MODAL);
@@ -50,18 +50,18 @@ public class MainForm extends Application implements CreateSmtNew {
         webview.getEngine().load(url);
         webview.setPrefSize(640, 390);
 
-        stage.setScene(new Scene(webview));
+        stage.setScene(new Scene(webview)); //отображение сцены для просмотра видео
         stage.show();
         mainStage.close();
     }
 
-    public String getSearchRequest(){
+    public String getSearchRequest(){ //метод для получения данных со строки поиска
         String searchRequest;
         searchRequest = textField.getText();
         return searchRequest;
     }
 
-    void saveVBox(){
+    void saveVBox(){ //сохранение в контейнер всех элементов
 
         vBox.setSpacing(20);
         vBox.setPadding(new Insets(15,20,10,10));
